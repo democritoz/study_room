@@ -23,6 +23,14 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
+
+	// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+	// Jwts.build().compact() 할때, java.lang.ClassNowFoundException이 발생하여, 아래 dependency 추가함. 이후 정상 작동 확인.
+	implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
 }
 
 tasks.named('test') {
